@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-gray-800 font-sans antialiased selection:bg-purple-light selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-purple-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-purple text-cream px-8 py-3 rounded-sm tracking-wide font-medium transition-all duration-300 hover:bg-purple-light border border-transparent hover:border-gold;
+  }
+  
+  .btn-secondary {
+    @apply inline-block bg-transparent text-purple border border-purple px-8 py-3 rounded-sm tracking-wide font-medium transition-all duration-300 hover:bg-cream-300 hover:text-purple-dark;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+}
+
+/* Background overlay pattern to ensure text is readable but pattern shows through */
+.bg-pattern {
+  background-image: url('/src/assets/images/background.png');
+  background-repeat: repeat;
+  background-size: 800px;
+  background-position: center top;
+}
+
+.bg-pattern-overlay {
+  background-color: rgba(253, 251, 247, 0.85); /* Cream with some transparency */
+}
