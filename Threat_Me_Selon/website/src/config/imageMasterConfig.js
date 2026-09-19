@@ -6,10 +6,16 @@
  * 
  * TO CHANGE OR REPLACE ANY IMAGE/VIDEO ON THE WEBSITE:
  * 1. Find the section/component below where the image appears.
- * 2. Replace the file path or URL with your new image/video path.
+ * 2. Replace the file path or URL with your new image/video path or import.
  * 3. Save this file, and the website will automatically update!
  * ==============================================================================
  */
+
+// Import static images so Vite bundles them reliably for GitHub Pages / Vercel
+import logoImg from '../assets/images/logo.jpg';
+import bgImg from '../assets/images/background.png';
+import mainProfileImg from '../assets/images/Main_profile_image_1.png';
+import founderImg from '../assets/images/founder.jpg';
 
 export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
@@ -18,7 +24,7 @@ export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
   logo: {
     location: "Navbar & Footer Branding Header",
-    path: "/src/assets/images/logo.jpg",
+    path: logoImg,
     alt: "ThreadMe Beauty & Style Logo"
   },
 
@@ -28,7 +34,7 @@ export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
   heroBackground: {
     location: "Home Page Hero Banner Background Image",
-    path: "/src/assets/images/background.png",
+    path: bgImg,
     alt: "ThreadMe Salon Background"
   },
 
@@ -38,7 +44,7 @@ export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
   aboutProfile: {
     location: "About Us Section - Founder Profile Image",
-    path: "/src/assets/images/Main_profile_image_1.png",
+    path: mainProfileImg,
     alt: "Indy Kaur - Founder & CEO"
   },
 
@@ -49,22 +55,22 @@ export const imageMasterConfig = {
   services: {
     eyebrowsPmu: {
       location: "Service Card 1: Eyebrows & PMU",
-      path: "/src/assets/images/founder.jpg",
+      path: founderImg,
       alt: "Eyebrows & PMU Services"
     },
     skincareFacials: {
       location: "Service Card 2: Skincare & Facials",
-      path: "/src/assets/images/founder.jpg",
+      path: founderImg,
       alt: "Skincare & Facials Services"
     },
     waxingTinting: {
       location: "Service Card 3: Waxing & Tinting",
-      path: "/src/assets/images/founder.jpg",
+      path: founderImg,
       alt: "Waxing & Tinting Services"
     },
     makeupArtistry: {
       location: "Service Card 4: Beauty & Event Makeup",
-      path: "/src/assets/images/founder.jpg",
+      path: founderImg,
       alt: "Beauty & Event Makeup Services"
     }
   },
@@ -79,8 +85,7 @@ export const imageMasterConfig = {
 
 /**
  * Utility helper to dynamically load media files inside src/assets/Gallery/
- * ONLY creates category tabs for subfolders that actually contain image or video files.
- * Empty subfolders do NOT generate category tabs.
+ * Uses Vite's import.meta.glob to ensure all gallery photos/videos get bundled 100% reliably for GitHub!
  */
 export const getGalleryData = () => {
   // Glob match valid image and video files inside /src/assets/Gallery/ recursively
@@ -115,7 +120,6 @@ export const getGalleryData = () => {
     const isVideo = ['mp4', 'webm', 'mov'].includes(ext);
 
     if (isImage || isVideo) {
-      // Only include category if it actually contains media!
       categoriesSet.add(category);
 
       items.push({
