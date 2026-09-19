@@ -26,8 +26,10 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-cream/95 backdrop-blur-sm shadow-sm py-3' : 'bg-cream/80 backdrop-blur-sm py-4 border-b border-gold/20'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-cream/98 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-3 border-b border-gold/30'
+          : 'bg-cream/80 backdrop-blur-sm py-5 border-b border-gold/15'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -52,8 +54,10 @@ const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium tracking-wider uppercase transition-colors ${
-                  isActive ? 'text-purple font-semibold border-b-2 border-gold pb-0.5' : 'text-gray-700 hover:text-purple'
+                className={`text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-200 relative pb-1 ${
+                  isActive
+                    ? 'text-purple after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gold'
+                    : 'text-gray-600 hover:text-purple'
                 }`}
               >
                 {link.name}

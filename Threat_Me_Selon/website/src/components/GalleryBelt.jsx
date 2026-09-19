@@ -5,41 +5,27 @@ import { loadGalleryMedia } from '../config/imageMasterConfig';
 const GalleryBelt = () => {
   const navigate = useNavigate();
 
-  // Generate belt sequence where for every 5 items: 3 are images and 2 are videos
   const beltItems = useMemo(() => {
     const rawItems = loadGalleryMedia();
     const images = rawItems.filter((m) => m.type === 'image');
     const videos = rawItems.filter((m) => m.type === 'video');
 
     const getRandom = (arr, fallbackArr) => {
-      if (arr.length > 0) {
-        return arr[Math.floor(Math.random() * arr.length)];
-      }
-      if (fallbackArr.length > 0) {
-        return fallbackArr[Math.floor(Math.random() * fallbackArr.length)];
-      }
+      if (arr.length > 0) return arr[Math.floor(Math.random() * arr.length)];
+      if (fallbackArr.length > 0) return fallbackArr[Math.floor(Math.random() * fallbackArr.length)];
       return null;
     };
 
-    // Pattern for 15 items (3 blocks of 5 items: [Image, Video, Image, Video, Image])
     const totalItems = 15;
     const sequence = [];
 
     for (let i = 0; i < totalItems; i++) {
       const pos = i % 5;
-      // Positions 1 and 3 in every 5-item block are videos (2 out of 5)
       const isVideoSlot = pos === 1 || pos === 3;
-
-      if (isVideoSlot) {
-        const item = getRandom(videos, images);
-        if (item) sequence.push({ ...item, uniqueKey: `video-${i}` });
-      } else {
-        const item = getRandom(images, videos);
-        if (item) sequence.push({ ...item, uniqueKey: `image-${i}` });
-      }
+      const item = isVideoSlot ? getRandom(videos, images) : getRandom(images, videos);
+      if (item) sequence.push({ ...item, uniqueKey: `${isVideoSlot ? 'v' : 'i'}-${i}` });
     }
 
-    // Triple sequence for infinite smooth belt scrolling
     return [...sequence, ...sequence, ...sequence];
   }, []);
 
@@ -48,15 +34,31 @@ const GalleryBelt = () => {
   };
 
   return (
-    <section id="gallery" className="py-12 bg-cream relative overflow-hidden z-10">
-      {/* Infinite Rotating Belt - Only the belt of images touching side by side */}
+    <section id="gallery-belt" className="py-0 bg-cream relative overflow-hidden z-10">
+
+      {/* ── Gallery Belt label ── */}
+      <div className="text-center pt-12 pb-6">
+        <p className="section-label text-xs tracking-[0.25em] text-gold uppercase font-semibold">
+          <span>✦</span> Gallery Belt <span>✦</span>
+        </p>
+        <span className="gold-divider" />
+      </div>
+
+      {/* ── Scrolling Belt ── */}
       <div className="relative w-full overflow-hidden select-none">
-        <div className="flex w-max animate-marquee space-x-0 items-center">
+
+        {/* Left fade mask */}
+        <div className="absolute inset-y-0 left-0 w-20 sm:w-32 z-10 pointer-events-none bg-gradient-to-r from-cream to-transparent" />
+        {/* Right fade mask */}
+        <div className="absolute inset-y-0 right-0 w-20 sm:w-32 z-10 pointer-events-none bg-gradient-to-l from-cream to-transparent" />
+
+        <div className="flex w-max animate-marquee items-stretch">
           {beltItems.map((item, index) => (
             <div
               key={`${item.id}-${index}`}
               onClick={() => handleImageClick(item)}
-              className="w-72 sm:w-80 h-96 sm:h-[420px] flex-shrink-0 relative overflow-hidden cursor-pointer group bg-black"
+              className="w-64 sm:w-72 md:w-80 h-80 sm:h-96 md:h-[420px] flex-shrink-0 relative overflow-hidden cursor-pointer group bg-black"
+              style={{ borderRight: '1px solid rgba(201,168,76,0.15)' }}
             >
               {item.type === 'video' ? (
                 <video
@@ -65,30 +67,29 @@ const GalleryBelt = () => {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               ) : (
                 <img
                   src={item.path}
                   alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               )}
+
+              {/* Subtle hover overlay */}
+              <div className="absolute inset-0 bg-purple-dark/0 group-hover:bg-purple-dark/20 transition-colors duration-300 flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-cream/90 text-purple-dark text-[10px] font-semibold tracking-widest uppercase px-3 py-1.5 border border-gold/50">
+                  View in Gallery
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* CSS Animation for smooth continuous belt marquee */}
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-33.333333%); }
-        }
-        .animate-marquee {
-          animation: marquee 35s linear infinite;
-        }
-      `}</style>
+      <div className="pb-12" />
     </section>
   );
 };

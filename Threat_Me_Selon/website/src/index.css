@@ -1,34 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-cream text-gray-800 font-sans antialiased selection:bg-purple-light selection:text-white;
+  :root {
+    --color-gold: #C9A84C;
+    --color-purple: #6B21A8;
+    --color-purple-dark: #1a0633;
+    --color-cream: #FDFBF7;
+    --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-gray-800 font-sans antialiased selection:bg-purple/30 selection:text-purple-dark;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-purple-dark;
+  }
+
+  /* Premium custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f3eeff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C9A84C;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a07c30;
   }
 }
 
 @layer components {
+  /* Primary CTA button — gold fill */
   .btn-primary {
-    @apply inline-block bg-purple text-cream px-8 py-3 rounded-sm tracking-wide font-medium transition-all duration-300 hover:bg-purple-light border border-transparent hover:border-gold;
+    @apply inline-block bg-gold text-purple-dark px-8 py-3 rounded-none tracking-widest font-semibold text-sm uppercase transition-all duration-300 hover:bg-cream border border-gold hover:border-gold shadow-sm hover:shadow-md;
   }
-  
+
+  /* Secondary outlined button */
   .btn-secondary {
-    @apply inline-block bg-transparent text-purple border border-purple px-8 py-3 rounded-sm tracking-wide font-medium transition-all duration-300 hover:bg-cream-300 hover:text-purple-dark;
+    @apply inline-block bg-transparent text-purple border border-purple px-8 py-3 rounded-none tracking-widest text-sm font-semibold uppercase transition-all duration-300 hover:bg-purple hover:text-cream;
   }
-  
+
   .section-padding {
-    @apply py-20 md:py-32;
+    @apply py-24 md:py-36;
+  }
+
+  /* Gold divider line */
+  .gold-divider {
+    @apply block mx-auto my-4 w-16 h-px bg-gradient-to-r from-transparent via-gold to-transparent;
+  }
+
+  /* Overline label */
+  .section-label {
+    @apply text-xs font-sans font-semibold tracking-[0.25em] text-gold uppercase flex items-center justify-center gap-2 mb-3;
+  }
+
+  /* Card with gold hover glow */
+  .card-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_rgba(201,168,76,0.15)];
   }
 }
 
-/* Background overlay pattern to ensure text is readable but pattern shows through */
+/* Background texture using background.png */
 .bg-pattern {
   background-image: url('/src/assets/images/background.png');
   background-repeat: repeat;
@@ -37,5 +82,60 @@
 }
 
 .bg-pattern-overlay {
-  background-color: rgba(253, 251, 247, 0.85); /* Cream with some transparency */
+  background-color: rgba(253, 251, 247, 0.88);
 }
+
+/* Hide native scrollbar in belt while keeping scroll */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Smooth marquee belt */
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-33.3333%); }
+}
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Fade-in slide-up for chatbot window */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+/* Typing dots for chatbot */
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0; }
+  40%            { opacity: 1; }
+}
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C9A84C;
+  animation: blink 1.4s infinite both;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Gold shimmer on section labels */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.text-shimmer {
+  background: linear-gradient(90deg, #C9A84C 25%, #f5d78e 50%, #C9A84C 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Custom scrollbar for chatbot messages area */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #C9A84C44; border-radius: 2px; }
