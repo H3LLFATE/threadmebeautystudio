@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { siteConfig } from '../config/siteConfig';
 import { Menu, X } from 'lucide-react';
 
@@ -7,6 +7,18 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const goToBookingForm = () => {
+    setMobileMenuOpen(false);
+
+    if (location.pathname === '/') {
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    navigate('/#contact');
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,9 +76,13 @@ const Navbar = () => {
               </Link>
             );
           })}
-          <Link to="/#contact" className="btn-primary text-xs uppercase tracking-widest px-6 py-2.5 rounded-none">
+          <button
+            type="button"
+            onClick={goToBookingForm}
+            className="btn-primary text-xs uppercase tracking-widest px-6 py-2.5 rounded-none"
+          >
             Book Appointment
-          </Link>
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -92,13 +108,13 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link 
-            to="/#contact" 
+          <button
+            type="button"
             className="btn-primary text-center mt-4 rounded-none text-xs uppercase tracking-widest"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={goToBookingForm}
           >
             Book Appointment
-          </Link>
+          </button>
         </div>
       )}
     </header>

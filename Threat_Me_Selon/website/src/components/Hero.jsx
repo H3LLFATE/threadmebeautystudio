@@ -7,6 +7,11 @@ const Hero = () => {
   const heroRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  const scrollToBookingForm = (event) => {
+    event.preventDefault();
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   useEffect(() => {
     let animationFrame;
 
@@ -83,6 +88,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <a
             href={siteConfig.links.booking}
+            onClick={scrollToBookingForm}
             className="inline-block bg-gold text-purple-dark px-8 py-3 tracking-wide font-semibold transition-all duration-300 hover:bg-cream border border-gold hover:border-gold text-sm uppercase"
           >
             Book an Appointment

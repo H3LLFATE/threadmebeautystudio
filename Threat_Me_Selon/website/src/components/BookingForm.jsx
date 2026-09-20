@@ -54,7 +54,7 @@ const BookingForm = () => {
   );
 
   return (
-    <section id="contact" className="section-padding relative bg-cream border-t border-gold/20">
+    <section id="contact" className="section-padding scroll-mt-24 relative bg-cream border-t border-gold/20">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
