@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { Sparkles } from 'lucide-react';
 import heroVideo from '../assets/images/hero_video.mp4';
 
 const Hero = () => {
+  const heroRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    let animationFrame;
+
+    const updateScrollProgress = () => {
+      const hero = heroRef.current;
+      if (!hero) return;
+
+      const { top, height } = hero.getBoundingClientRect();
+      const progress = Math.min(Math.max(-top / height, 0), 1);
+      setScrollProgress(progress);
+      animationFrame = undefined;
+    };
+
+    const handleScroll = () => {
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(updateScrollProgress);
+      }
+    };
+
+    updateScrollProgress();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', updateScrollProgress);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateScrollProgress);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
+  const contentOpacity = Math.max(0, 1 - Math.max(0, scrollProgress - 0.55) / 0.45);
+
   return (
-    <section id="home" className="relative h-screen flex items-center pt-20 overflow-hidden">
+    <section ref={heroRef} id="home" className="relative h-[100svh] min-h-[100svh] flex items-center overflow-hidden">
       
       {/* Looping Background Video */}
       <video
@@ -21,7 +56,10 @@ const Hero = () => {
       <div className="absolute inset-0 z-10 backdrop-blur-sm bg-purple-dark/50"></div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-12 relative z-20 flex flex-col items-center text-center">
+      <div
+        className="container mx-auto px-6 md:px-12 relative z-20 flex flex-col items-center text-center transition-opacity duration-100"
+        style={{ opacity: contentOpacity }}
+      >
         
         {/* Experience Badge */}
         <div className="mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/50 bg-cream/10 backdrop-blur-md">
