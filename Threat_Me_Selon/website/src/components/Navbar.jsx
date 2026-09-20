@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOverHome, setIsOverHome] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,10 +24,19 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const homeSection = document.getElementById('home');
+      const headerHeight = 96;
+      setIsOverHome(
+        location.pathname === '/' &&
+        Boolean(homeSection) &&
+        homeSection.getBoundingClientRect().bottom > headerHeight
+      );
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -35,6 +45,7 @@ const Navbar = () => {
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/#contact' },
   ];
+  const desktopTextColor = isOverHome ? 'text-white' : 'text-gold';
 
   return (
     <header 
@@ -52,7 +63,7 @@ const Navbar = () => {
             alt={siteConfig.business.name} 
             className="h-12 w-12 rounded-full border border-gold/30 group-hover:border-gold transition-colors object-cover"
           />
-          <span className="font-serif text-xl font-medium tracking-wide text-white hidden sm:block">
+          <span className={`font-serif text-xl font-medium tracking-wide hidden sm:block transition-colors duration-300 ${desktopTextColor}`}>
             ThreadMe
           </span>
         </Link>
@@ -68,8 +79,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-200 relative pb-1 ${
                   isActive
-                    ? 'text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gold'
-                    : 'text-white hover:text-gold'
+                    ? `${desktopTextColor} after:absolute after:bottom-0 after:left-0 after:w-full after:h-px ${isOverHome ? 'after:bg-gold' : 'after:bg-cream'}`
+                    : `${desktopTextColor} ${isOverHome ? 'hover:text-gold' : 'hover:text-cream'}`
                 }`}
               >
                 {link.name}
@@ -97,7 +108,7 @@ const Navbar = () => {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-cream border-t border-cream-400 shadow-lg py-4 px-6 flex flex-col gap-4 z-50">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-cream border border-cream-400 rounded-b-2xl shadow-xl py-4 px-6 flex flex-col gap-4 z-50 animate-navbar-dropdown">
           {navLinks.map((link) => (
             <Link
               key={link.name} 
