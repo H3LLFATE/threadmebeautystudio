@@ -40,7 +40,7 @@ const Navbar = () => {
             alt={siteConfig.business.name} 
             className="h-12 w-12 rounded-full border border-gold/30 group-hover:border-gold transition-colors object-cover"
           />
-          <span className="font-serif text-xl font-medium tracking-wide text-purple-dark hidden sm:block">
+          <span className="font-serif text-xl font-medium tracking-wide text-white hidden sm:block">
             ThreadMe
           </span>
         </Link>
@@ -56,8 +56,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-xs font-semibold tracking-[0.15em] uppercase transition-all duration-200 relative pb-1 ${
                   isActive
-                    ? 'text-purple after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gold'
-                    : 'text-gray-600 hover:text-purple'
+                    ? 'text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-gold'
+                    : 'text-white hover:text-gold'
                 }`}
               >
                 {link.name}
@@ -71,7 +71,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-purple-dark p-1"
+          className="md:hidden text-white p-1"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle Menu"
         >
