@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Calendar, Sparkles } from 'lucide-react';
 
+const initialFormData = {
+  fullName: '',
+  phone: '',
+  email: '',
+  postcode: '',
+  preferredDate: '',
+  preferredTime: '',
+  treatment: 'Eyebrow Threading & Shaping',
+  message: ''
+};
+
 const BookingForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    phone: '',
-    email: '',
-    postcode: '',
-    preferredDate: '',
-    preferredTime: 'Morning (10:00 AM - 1:00 PM)',
-    treatment: 'Eyebrow Threading & Shaping',
-    message: ''
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -26,7 +28,23 @@ const BookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Simulate submission
+
+    const formattedPhone = siteConfig.business.phone.replace(/[^0-9]/g, '');
+    const whatsappNumber = formattedPhone.length === 10 ? `1${formattedPhone}` : formattedPhone;
+    const bookingMessage = [
+      `Hello ${siteConfig.business.name}! I would like to request an appointment.`,
+      '',
+      `Name: ${formData.fullName}`,
+      `Phone: ${formData.phone}`,
+      `Email: ${formData.email}`,
+      `Postcode: ${formData.postcode || 'Not provided'}`,
+      `Preferred date: ${formData.preferredDate || 'Not specified'}`,
+      `Preferred time: ${formData.preferredTime}`,
+      `Service: ${formData.treatment}`,
+      `Message: ${formData.message || 'None'}`
+    ].join('\n');
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(bookingMessage)}`, '_blank', 'noopener,noreferrer');
     setIsSubmitted(true);
   };
 
@@ -156,16 +174,7 @@ const BookingForm = () => {
                   <button 
                     onClick={() => {
                       setIsSubmitted(false);
-                      setFormData({
-                        fullName: '',
-                        phone: '',
-                        email: '',
-                        postcode: '',
-                        preferredDate: '',
-                        preferredTime: 'Morning (10:00 AM - 1:00 PM)',
-                        treatment: 'Eyebrow Threading & Shaping',
-                        message: ''
-                      });
+                      setFormData(initialFormData);
                     }}
                     className="btn-secondary text-xs uppercase tracking-widest mt-6"
                   >
@@ -258,18 +267,17 @@ const BookingForm = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-xs font-sans font-bold tracking-widest text-gray-500 uppercase mb-2">
-                        PREFERRED TIME
+                        PREFERRED TIME *
                       </label>
-                      <select 
+                      <input
+                        type="text"
                         name="preferredTime"
+                        required
                         value={formData.preferredTime}
                         onChange={handleChange}
-                        className="w-full bg-cream-50/70 border border-cream-300 rounded-xl px-4 py-3.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all text-sm cursor-pointer"
-                      >
-                        <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
-                        <option value="Afternoon (1:00 PM - 5:00 PM)">Afternoon (1:00 PM - 5:00 PM)</option>
-                        <option value="Evening (5:00 PM - 7:00 PM)">Evening (5:00 PM - 7:00 PM)</option>
-                      </select>
+                        placeholder="e.g. 2:30 PM"
+                        className="w-full bg-cream-50/70 border border-cream-300 rounded-xl px-4 py-3.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold transition-all text-sm"
+                      />
                     </div>
 
                     <div>

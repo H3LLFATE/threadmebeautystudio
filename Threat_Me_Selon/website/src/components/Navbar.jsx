@@ -28,8 +28,8 @@ const Navbar = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-cream/98 backdrop-blur-md shadow-[0_2px_20px_rgba(0,0,0,0.08)] py-3 border-b border-gold/30'
-          : 'bg-cream/80 backdrop-blur-sm py-5 border-b border-gold/15'
+          ? 'bg-transparent py-3'
+          : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -106,4 +106,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
