@@ -5,7 +5,7 @@ export const siteConfig = {
     name: "ThreadMe Beauty & Style",
     founder: "Indy Kaur",
     title: "Founder & CEO",
-    phone: "+1 215-594-7273",
+    phone: "(971) 447-5050",
     email: "info@threadmebeautystudio.com",
     website: "https://threadmebeautystudio.com",
     address: "1850 S River Dr, Portland, OR 97201, United States",
@@ -42,7 +42,7 @@ export const siteConfig = {
       id: "eyebrows-pmu",
       category: "Eyebrows & PMU",
       subtitle: "Threading, Shaping, Shading & PMU",
-      image: "/src/assets/images/founder.jpg",
+      image: imageMasterConfig.services.eyebrowsPmu.path,
       description: "Master eyebrow shaping and long-lasting permanent makeup tailored to highlight your natural facial features.",
       items: [
         { name: "Eyebrow Threading & Shaping", desc: "Precise hair removal creating clean, defined arches tailored to your face shape." },
@@ -55,7 +55,7 @@ export const siteConfig = {
       id: "skincare-facials",
       category: "Skincare & Facials",
       subtitle: "Rejuvenation & Deep Skin Nourishment",
-      image: "/src/assets/images/founder.jpg",
+      image: imageMasterConfig.services.skincareFacials.path,
       description: "Customized skin treatments designed to refresh, hydrate, and restore a youthful, radiant glow.",
       items: [
         { name: "Customized Facial Treatments", desc: "Targeted deep cleansing, gentle exfoliation, and custom serum application." },
@@ -67,7 +67,7 @@ export const siteConfig = {
       id: "waxing-tinting",
       category: "Waxing & Tinting",
       subtitle: "Facial/Body Waxing & Lash Enhancement",
-      image: "/src/assets/images/founder.jpg",
+      image: imageMasterConfig.services.waxingTinting.path,
       description: "Gentle, professional waxing for smooth skin, complemented by brow and lash tinting definition.",
       items: [
         { name: "Professional Facial Waxing", desc: "Gentle waxing for upper lip, chin, cheeks, and full face." },
@@ -79,7 +79,7 @@ export const siteConfig = {
       id: "makeup-artistry",
       category: "Beauty & Event Makeup",
       subtitle: "Bridal, Pageant & Special Occasion",
-      image: "/src/assets/images/founder.jpg",
+      image: imageMasterConfig.services.makeupArtistry.path,
       description: "Stunning HD camera-ready makeup artistry for weddings, pageants, and high-profile special events.",
       items: [
         { name: "Bridal Makeup Artistry", desc: "Luxurious wedding glam customized to bring your dream bridal look to life." },
