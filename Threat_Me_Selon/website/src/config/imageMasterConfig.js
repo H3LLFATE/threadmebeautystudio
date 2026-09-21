@@ -16,6 +16,10 @@ import logoImg from '../assets/images/logo.jpg';
 import bgImg from '../assets/images/background.png';
 import mainProfileImg from '../assets/images/Main_profile_image_1.png';
 import founderImg from '../assets/images/founder.jpg';
+import pmuImg from '../assets/images/PMU.jpeg';
+import waxImg from '../assets/images/WAXING.jpeg';
+import skinImg from '../assets/images/FACIAL.jpeg';
+import makeupImg from '../assets/images/EVENTMAKEUP.jpeg';
 
 export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
@@ -55,22 +59,22 @@ export const imageMasterConfig = {
   services: {
     eyebrowsPmu: {
       location: "Service Card 1: Eyebrows & PMU",
-      path: founderImg,
+      path: pmuImg,
       alt: "Eyebrows & PMU Services"
     },
     skincareFacials: {
       location: "Service Card 2: Skincare & Facials",
-      path: founderImg,
+      path: skinImg,
       alt: "Skincare & Facials Services"
     },
     waxingTinting: {
       location: "Service Card 3: Waxing & Tinting",
-      path: founderImg,
+      path: waxImg,
       alt: "Waxing & Tinting Services"
     },
     makeupArtistry: {
       location: "Service Card 4: Beauty & Event Makeup",
-      path: founderImg,
+      path: makeupImg,
       alt: "Beauty & Event Makeup Services"
     }
   },

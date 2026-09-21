@@ -5,7 +5,7 @@ export const siteConfig = {
     name: "ThreadMe Beauty & Style",
     founder: "Indy Kaur",
     title: "Founder & CEO",
-    phone: "(971) 447-5050",
+    phone: "+1 215-594-7273",
     email: "info@threadmebeautystudio.com",
     website: "https://threadmebeautystudio.com",
     address: "1850 S River Dr, Portland, OR 97201, United States",
