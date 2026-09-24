@@ -96,7 +96,7 @@ const Services = ({ isPreview = false }) => {
 
                 {/* --- DETAILS OVERLAY VIEW (Revealed on Tap) --- */}
                 <div 
-                  className={`absolute inset-0 w-full h-full bg-purple-dark text-cream p-6 sm:p-8 flex flex-col justify-between z-20 rounded-none transition-all duration-500 transform ${
+                  className={`absolute inset-0 w-full h-full bg-[#80679b] text-cream p-6 sm:p-8 flex flex-col justify-between z-20 rounded-none transition-all duration-500 transform ${
                     isFlipped ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
                   }`}
                 >
