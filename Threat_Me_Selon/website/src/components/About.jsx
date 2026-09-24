@@ -15,6 +15,7 @@ const credentials = [
   'Certified PMU & Skincare Specialist',
   'Expert in Bridal & Stage Makeup',
   'Now serving Portland, Oregon',
+  'Master in Brow Threading & Shaping',
 ];
 
 const About = () => {
