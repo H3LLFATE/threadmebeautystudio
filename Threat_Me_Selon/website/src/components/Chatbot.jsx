@@ -21,24 +21,29 @@ const generateBotReply = (userQuery) => {
     return `Goodbye! 🌸 We look forward to welcoming you to ${siteConfig.business.name}. Have a wonderful day!`;
   }
 
-  // ── Eyebrows & PMU ──
-  if (/eyebrow|threading|thread|brow shape|brow tint|brow|pmu|permanent makeup|powder brow|ombre brow|microblading|lip blush|lip tint|semi.?permanent/.test(q)) {
-    return `✨ **Eyebrows & PMU Services:**\n\n• **Eyebrow Threading & Shaping** — Precise hand-threading technique that removes unwanted hair perfectly along your natural arch.\n• **Powder Brows / Ombre Shading** — A soft, powdery PMU effect that mimics the look of filled-in brows — lasts 1–3 years.\n• **Permanent Makeup (PMU)** — Long-lasting semi-permanent beauty enhancement for brows, liner & lips.\n• **Lip Blush** — Adds natural-looking pigment and definition to your lips for a soft, tinted effect.\n• **Brow Tinting** — Color-matched tinting to darken and define your natural brows.\n\nFounder Indy Kaur has **20+ years of expert artistry** in these techniques! 💛\n\nWant to book? Use our Request Booking form below.`;
+    // ── PMU ──
+  if (/pmu|permanent makeup|lip blush|lip tint|semi.?permanent/.test(q)) {
+    return `✨ **Permanent Makeup (PMU):**\n\n• **Permanent Makeup (PMU)** — Professional semi-permanent cosmetic enhancement designed to create beautifully defined, long-lasting results.\n• **Lip Blush** — Enhances your natural lip contour, symmetry, and color with a soft, long-lasting rosy tint.\n\nOur PMU services are designed to enhance your natural features while creating a polished, effortless look. 💛\n\nWant to book? Use our Request Booking form below.`;
   }
 
   // ── Skincare & Facials ──
   if (/skin|facial|face|rejuvenat|pore|glow|cleansi|detox|hydrat|exfoliat|moisture|moisturizer|anti.?age|anti.?ageing|anti.?aging|acne|blackhead|whitehead/.test(q)) {
-    return `🌿 **Skincare & Facial Treatments:**\n\n• **Customized Facial Treatment** — Personally tailored to your unique skin type and concerns.\n• **Deep Pore Cleansing & Detox** — Thoroughly clears congested pores for a fresh, clear complexion.\n• **Skin Rejuvenation Therapy** — Advanced techniques that restore youthful radiance and firmness.\n• **Anti-Aging Treatment** — Target fine lines, uneven texture, and dullness with results-driven protocols.\n• **Hydration & Glow Boost Facials** — Intense moisture infusion for plump, luminous skin.\n\nAll treatments use premium, professional-grade products 🌸`;
+    return `🌿 **Skincare & Facial Treatments:**\n\n• **Customized Facial Treatments** — Targeted treatments tailored to your skin type and individual concerns.\n• **Deep Pore Cleansing & Detox** — Helps remove impurities and refine skin texture for a smoother, clearer complexion.\n• **Skin Rejuvenation & Repair** — Nourishing treatments focused on hydration, renewal, and a healthy, radiant appearance.\n\nTreatments are designed to refresh, nourish, and restore your skin's natural glow. 🌸`;
   }
 
-  // ── Waxing & Tinting ──
-  if (/wax|tint|lash|lip wax|chin wax|eyebrow wax|full body|body wax|leg wax|arm wax|bikini/.test(q)) {
-    return `✦ **Waxing & Tinting Services:**\n\n• **Facial Waxing** — Gentle, precise waxing for upper lip, chin, brows, and sideburns.\n• **Full Body Waxing** — Smooth, long-lasting hair removal for legs, arms, underarms, and more.\n• **Lash Tinting** — Darkens your natural lashes for a mascara-free, effortlessly defined look.\n• **Brow Tinting** — Customized color to enhance and define your natural brow shape.\n\nAll waxing uses premium hypoallergenic wax — perfect even for sensitive skin! 💕`;
+  // ── Waxing ──
+  if (/wax|lip wax|chin wax|eyebrow wax|full body|body wax|leg wax|arm wax|bikini|sideburn/.test(q)) {
+    return `✦ **Waxing Services:**\n\n• **Professional Facial Waxing** — Gentle waxing for areas including the upper lip, chin, cheeks, and full face.\n• **Full Body Waxing Services** — Professional waxing treatments for smooth, silky skin.\n\nOur waxing services are designed to leave your skin smooth, clean, and beautifully groomed. 💕\n\nWant to book? Use our Request Booking form below.`;
+  }
+
+  // ── Brows & Lashes ──
+  if (/brow|brows|lash|lashes|lamination|henna|lash lift|brow tint|lash tint/.test(q)) {
+    return `✨ **Brows & Lashes:**\n\n• **Lash Lift** — Lifts and curls your natural lashes for a beautifully opened and defined eye appearance.\n• **Brow Lamination** — Smooths, shapes, and sets brow hairs for a fuller, more defined look.\n• **Brow Tint** — Enhances brow definition and depth with a professionally applied tint.\n• **Henna Brow Tint** — Creates beautifully defined brows with a rich henna tint for added color and shape.\n• **Lash Tint** — Darkens and defines natural lashes for a more noticeable, polished appearance.\n\nWant to book? Use our Request Booking form below.`;
   }
 
   // ── Makeup & Beauty ──
   if (/makeup|make.?up|bridal|bride|wedding|event|gala|pageant|stage|prom|glam|contour|smokey|full.?glam|airbrush/.test(q)) {
-    return `💄 **Beauty & Event Makeup:**\n\n• **Bridal / Wedding Glam** — Breathtakingly beautiful, long-lasting bridal looks for your most important day.\n• **Pageant & Stage Makeup** — High-definition, camera-ready artistry for competitions and performances.\n• **Special Event Glam** — From galas to birthdays, we create your perfect look for every occasion.\n• **Airbrush Makeup** — Ultra-smooth, flawless finish makeup that photographs beautifully.\n\nIndy Kaur's artistry has been featured in beauty events across Malaysia and the USA 🌎`;
+    return `💄 **Beauty & Event Makeup:**\n\n• **Bridal Makeup Artistry** — Luxurious wedding makeup customized to bring your desired bridal look to life.\n• **Pageant & Stage Makeup** — High-impact, long-wear makeup designed for stage lighting and photography.\n• **Special Event Glam** — Radiant, polished makeup for galas, parties, photoshoots, and other special occasions.\n\nWant to book? Use our Request Booking form below.`;
   }
 
   // ── Hours ──

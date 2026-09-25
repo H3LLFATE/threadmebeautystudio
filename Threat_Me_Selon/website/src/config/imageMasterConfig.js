@@ -57,10 +57,10 @@ export const imageMasterConfig = {
   // Appears in: Home Page Services Preview & Dedicated /services Page Cards
   // ----------------------------------------------------------------------------
   services: {
-    eyebrowsPmu: {
-      location: "Service Card 1: Eyebrows & PMU",
+    Pmu: {
+      location: "Service Card 1: PMU",
       path: pmuImg,
-      alt: "Eyebrows & PMU Services"
+      alt: "PMU Services"
     },
     skincareFacials: {
       location: "Service Card 2: Skincare & Facials",
@@ -76,7 +76,13 @@ export const imageMasterConfig = {
       location: "Service Card 4: Beauty & Event Makeup",
       path: makeupImg,
       alt: "Beauty & Event Makeup Services"
+    },
+    browsAndLash: {
+      location: "Service Card 5: Brows & Lash Lift Tint and Lamination",
+      path: founderImg,
+      alt: "Brows & Lash Lift Tint and Lamination Services"
     }
+
   },
 
   // ----------------------------------------------------------------------------

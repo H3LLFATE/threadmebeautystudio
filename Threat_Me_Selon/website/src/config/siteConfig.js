@@ -5,7 +5,7 @@ export const siteConfig = {
     name: "ThreadMe Beauty & Style",
     founder: "Indy Kaur",
     title: "Founder & CEO",
-    phone: "+1 215-594-7273",
+    phone: "(971) 447-5050",
     email: "info@threadmebeautystudio.com",
     website: "https://threadmebeautystudio.com",
     address: "1850 S River Dr, Portland, OR 97201, United States",
@@ -39,54 +39,70 @@ export const siteConfig = {
   },
   services: [
     {
-      id: "eyebrows-pmu",
-      category: "Eyebrows & PMU",
-      subtitle: "Threading, Shaping, Shading & PMU",
-      image: imageMasterConfig.services.eyebrowsPmu.path,
-      description: "Master eyebrow shaping and long-lasting permanent makeup tailored to highlight your natural facial features.",
-      items: [
-        { name: "Eyebrow Threading & Shaping", desc: "Precise hair removal creating clean, defined arches tailored to your face shape." },
-        { name: "Eyebrow Shading & Powder Brows", desc: "Soft, misty powder finish for fuller, naturally defined brows." },
-        { name: "Permanent Makeup (PMU)", desc: "Expert cosmetic tattooing for effortlessly flawless, smudge-free brows." },
-        { name: "Lip Blush", desc: "Enhance natural lip contour, symmetry, and long-lasting rosy color tint." }
-      ]
-    },
-    {
-      id: "skincare-facials",
-      category: "Skincare & Facials",
-      subtitle: "Rejuvenation & Deep Skin Nourishment",
-      image: imageMasterConfig.services.skincareFacials.path,
-      description: "Customized skin treatments designed to refresh, hydrate, and restore a youthful, radiant glow.",
-      items: [
-        { name: "Customized Facial Treatments", desc: "Targeted deep cleansing, gentle exfoliation, and custom serum application." },
-        { name: "Skin Rejuvenation & Repair", desc: "Nourishing anti-aging and hydration therapies for healthy, glowing skin." },
-        { name: "Deep Pore Cleansing & Detox", desc: "Clears impurities and refines skin texture for a smooth, clear canvas." }
-      ]
-    },
-    {
-      id: "waxing-tinting",
-      category: "Waxing & Tinting",
-      subtitle: "Facial/Body Waxing & Lash Enhancement",
-      image: imageMasterConfig.services.waxingTinting.path,
-      description: "Gentle, professional waxing for smooth skin, complemented by brow and lash tinting definition.",
-      items: [
-        { name: "Professional Facial Waxing", desc: "Gentle waxing for upper lip, chin, cheeks, and full face." },
-        { name: "Full Body Waxing Services", desc: "Silky smooth skin using sensitive-skin friendly wax formulas." },
-        { name: "Lash & Brow Tinting", desc: "Define and darken your brows and lashes naturally with custom-blended tints." }
-      ]
-    },
-    {
-      id: "makeup-artistry",
-      category: "Beauty & Event Makeup",
-      subtitle: "Bridal, Pageant & Special Occasion",
-      image: imageMasterConfig.services.makeupArtistry.path,
-      description: "Stunning HD camera-ready makeup artistry for weddings, pageants, and high-profile special events.",
-      items: [
-        { name: "Bridal Makeup Artistry", desc: "Luxurious wedding glam customized to bring your dream bridal look to life." },
-        { name: "Pageant & Stage Makeup", desc: "High-impact, long-wear makeup engineered for stage lights and photography." },
-        { name: "Special Event Glam", desc: "Radiant, flawless makeup application for galas, parties, and photoshoots." }
-      ]
-    }
+  id: "pmu",
+  category: "Permanent Makeup (PMU)",
+  subtitle: "Long-Lasting Beauty Enhancement",
+  image: imageMasterConfig.services.pmu.path,
+  description: "Professional permanent makeup treatments designed to enhance your natural features with long-lasting, beautifully defined results.",
+  items: [
+    { name: "Permanent Makeup (PMU)", desc: "Expert cosmetic tattooing designed to create beautifully defined, long-lasting results." },
+    { name: "Lip Blush", desc: "Enhance natural lip contour, symmetry, and color with a soft, long-lasting rosy tint." }
+  ]
+},
+
+{
+  id: "skincare-facials",
+  category: "Skincare & Facials",
+  subtitle: "Rejuvenation & Deep Skin Nourishment",
+  image: imageMasterConfig.services.skincareFacials.path,
+  description: "Customized skin treatments designed to refresh, hydrate, and restore a youthful, radiant glow.",
+  items: [
+    { name: "Customized Facial Treatments", desc: "Targeted deep cleansing, gentle exfoliation, and custom serum application tailored to your skin." },
+    { name: "Skin Rejuvenation & Repair", desc: "Nourishing treatments focused on hydration, skin renewal, and a healthy, radiant appearance." },
+    { name: "Deep Pore Cleansing & Detox", desc: "Helps remove impurities and refine skin texture for a smoother, clearer complexion." }
+  ]
+},
+
+{
+  id: "waxing-tinting",
+  category: "Waxing & Tinting",
+  subtitle: "Facial & Body Waxing",
+  image: imageMasterConfig.services.waxingTinting.path,
+  description: "Professional waxing treatments designed to leave the skin smooth, clean, and beautifully groomed.",
+  items: [
+    { name: "Professional Facial Waxing", desc: "Gentle waxing for areas including the upper lip, chin, cheeks, and full face." },
+    { name: "Full Body Waxing Services", desc: "Professional waxing treatments for smooth, silky skin using suitable wax formulas." }
+  ]
+},
+
+{
+  id: "makeup-artistry",
+  category: "Beauty & Event Makeup",
+  subtitle: "Bridal, Pageant & Special Occasion",
+  image: imageMasterConfig.services.makeupArtistry.path,
+  description: "Stunning, camera-ready makeup artistry for weddings, pageants, and special occasions.",
+  items: [
+    { name: "Bridal Makeup Artistry", desc: "Luxurious wedding makeup customized to bring your desired bridal look to life." },
+    { name: "Pageant & Stage Makeup", desc: "High-impact, long-wear makeup designed for stage lighting and photography." },
+    { name: "Special Event Glam", desc: "Radiant, polished makeup application for galas, parties, photoshoots, and other special events." }
+  ]
+},
+
+{
+  id: "brows-and-lash",
+  category: "Brows & Lashes",
+  subtitle: "Lift, Tint & Define",
+  image: imageMasterConfig.services.browsAndLash.path,
+  description: "Professional brow and lash treatments designed to enhance definition, shape, lift, and natural beauty.",
+  items: [
+    { name: "Lash Lift", desc: "Lift and curl your natural lashes for a beautifully opened and defined eye appearance." },
+    { name: "Brow Lamination", desc: "Smooth, shape, and set brow hairs into a fuller, more defined look." },
+    { name: "Brow Tint", desc: "Enhance brow definition and depth with a professionally applied tint." },
+    { name: "Henna Brow Tint", desc: "Create beautifully defined brows with a rich henna tint for added color and shape." },
+    { name: "Lash Tint", desc: "Darken and define natural lashes for a more noticeable, polished appearance." }
+  ]
+}
+    
   ],
   gallery: [
     // The client will provide gallery images later.
