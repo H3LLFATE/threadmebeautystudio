@@ -57,7 +57,7 @@ export const imageMasterConfig = {
   // Appears in: Home Page Services Preview & Dedicated /services Page Cards
   // ----------------------------------------------------------------------------
   services: {
-    Pmu: {
+    pmu: {
       location: "Service Card 1: PMU",
       path: pmuImg,
       alt: "PMU Services"
