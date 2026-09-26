@@ -81,8 +81,12 @@ export const imageMasterConfig = {
       location: "Service Card 5: Brows & Lash Lift Tint and Lamination",
       path: founderImg,
       alt: "Brows & Lash Lift Tint and Lamination Services"
+    },
+    hairstyling: {
+      location: "Service Card 6: Hair Styling",
+      path: founderImg,
+      alt: "Hair Styling Services"
     }
-
   },
 
   // ----------------------------------------------------------------------------

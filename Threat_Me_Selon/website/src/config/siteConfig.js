@@ -27,7 +27,7 @@ export const siteConfig = {
   },
   links: {
     booking: "#contact", // Smooth scroll to contact & booking section
-    googleReviews: "#" // Placeholder
+    googleReviews: "https://www.google.com/search?client=ms-android-nothing-terr1-reo3&hs=xL1V&sa=X&bih=783&hl=en-GB&cs=1&biw=411&sca_esv=76c3b7943658a61d&sxsrf=APpeQntLWllXiEZD5hiT8yzUetn9DjOPKg:1790193890245&kgmid=/g/11b6jgwwy7&q=Bollywood+Eyebrow+Threading+Salon+%26+Spa&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/act/m1/4&kgs=168c441a112658bb&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/act/m1/4#"
   },
   content: {
     heroTitle: "Elegant Beauty. Masterful Artistry.",
@@ -43,10 +43,28 @@ export const siteConfig = {
   category: "Permanent Makeup (PMU)",
   subtitle: "Long-Lasting Beauty Enhancement",
   image: imageMasterConfig.services.pmu.path,
-  description: "Professional permanent makeup treatments designed to enhance your natural features with long-lasting, beautifully defined results.",
+  description: "Professional permanent makeup treatments designed to enhance your natural features with beautifully defined, long-lasting results.",
   items: [
-    { name: "Permanent Makeup (PMU)", desc: "Expert cosmetic tattooing designed to create beautifully defined, long-lasting results." },
-    { name: "Lip Blush", desc: "Enhance natural lip contour, symmetry, and color with a soft, long-lasting rosy tint." }
+    {
+      name: "Powder Brows",
+      desc: "Create softly shaded, defined brows with a polished powder-effect finish."
+    },
+    {
+      name: "Nano Combo Brows",
+      desc: "Combine fine nano hair strokes with soft shading for natural-looking, defined brows."
+    },
+    {
+      name: "Lip Blush Tattoos",
+      desc: "Enhance the natural shape, symmetry, and color of the lips with a soft, beautifully tinted finish."
+    },
+    {
+      name: "Eyeliner Tattoos",
+      desc: "Define and enhance the eyes with professionally applied semi-permanent eyeliner."
+    },
+    {
+      name: "Tattoo Freckles",
+      desc: "Add natural-looking freckles for a subtle, customized beauty enhancement."
+    }
   ]
 },
 
@@ -100,6 +118,28 @@ export const siteConfig = {
     { name: "Brow Tint", desc: "Enhance brow definition and depth with a professionally applied tint." },
     { name: "Henna Brow Tint", desc: "Create beautifully defined brows with a rich henna tint for added color and shape." },
     { name: "Lash Tint", desc: "Darken and define natural lashes for a more noticeable, polished appearance." }
+  ]
+},
+
+{
+  id: "hairstyling",
+  category: "Haircut, Hairstyling & Hair Color",
+  subtitle: "Professional Hair Transformation",
+  image: imageMasterConfig.services.hairstyling.path,
+  description: "Professional hair services tailored to your style, from precision haircuts and styling to beautiful color transformations.",
+  items: [
+    {
+      name: "Haircuts",
+      desc: "Professional haircuts tailored to your face shape, personal style, and desired look."
+    },
+    {
+      name: "Hair Styling",
+      desc: "Professional styling for everyday looks, special occasions, and events."
+    },
+    {
+      name: "Hair Color",
+      desc: "Customized hair color services designed to refresh, enhance, or completely transform your look."
+    }
   ]
 }
     

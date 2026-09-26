@@ -21,10 +21,24 @@ const generateBotReply = (userQuery) => {
     return `Goodbye! 🌸 We look forward to welcoming you to ${siteConfig.business.name}. Have a wonderful day!`;
   }
 
-    // ── PMU ──
-  if (/pmu|permanent makeup|lip blush|lip tint|semi.?permanent/.test(q)) {
-    return `✨ **Permanent Makeup (PMU):**\n\n• **Permanent Makeup (PMU)** — Professional semi-permanent cosmetic enhancement designed to create beautifully defined, long-lasting results.\n• **Lip Blush** — Enhances your natural lip contour, symmetry, and color with a soft, long-lasting rosy tint.\n\nOur PMU services are designed to enhance your natural features while creating a polished, effortless look. 💛\n\nWant to book? Use our Request Booking form below.`;
-  }
+  // ── PMU ──
+  if (/pmu|permanent makeup|powder brows|nano combo|nano brows|lip blush|lip blush tattoo|eyeliner tattoo|tattoo freckles|freckles/.test(q)) {
+return `✨ **Permanent Makeup (PMU):**
+• **Powder Brows** — Create softly shaded, defined brows with a polished powder-effect finish.
+
+• **Nano Combo Brows** — Combine fine nano hair strokes with soft shading for natural-looking, defined brows.
+
+• **Lip Blush Tattoos** — Enhance the natural shape, symmetry, and color of the lips with a soft, beautifully tinted finish.
+
+• **Eyeliner Tattoos** — Define and enhance the eyes with professionally applied semi-permanent eyeliner.
+
+• **Tattoo Freckles** — Add natural-looking freckles for a subtle, customized beauty enhancement.
+
+Our PMU treatments are designed to enhance your natural features while creating a polished, long-lasting look. 💛
+
+Want to book? Use our Request Booking form below.`;
+
+}
 
   // ── Skincare & Facials ──
   if (/skin|facial|face|rejuvenat|pore|glow|cleansi|detox|hydrat|exfoliat|moisture|moisturizer|anti.?age|anti.?ageing|anti.?aging|acne|blackhead|whitehead/.test(q)) {
@@ -45,6 +59,21 @@ const generateBotReply = (userQuery) => {
   if (/makeup|make.?up|bridal|bride|wedding|event|gala|pageant|stage|prom|glam|contour|smokey|full.?glam|airbrush/.test(q)) {
     return `💄 **Beauty & Event Makeup:**\n\n• **Bridal Makeup Artistry** — Luxurious wedding makeup customized to bring your desired bridal look to life.\n• **Pageant & Stage Makeup** — High-impact, long-wear makeup designed for stage lighting and photography.\n• **Special Event Glam** — Radiant, polished makeup for galas, parties, photoshoots, and other special occasions.\n\nWant to book? Use our Request Booking form below.`;
   }
+
+  // ── Haircut, Hair Styling & Hair Color ──
+if (/haircut|hair cut|hair style|hairstyle|hair styling|styling|hair color|hair colour|coloring|colouring|hair dye|dye/.test(q)) {
+  return `💇 **Haircut, Hairstyling & Hair Color:**
+
+• **Haircuts** — Professional haircuts tailored to your face shape, personal style, and desired look.
+
+• **Hair Styling** — Professional styling for everyday looks, special occasions, and events.
+
+• **Hair Color** — Customized hair color services designed to refresh, enhance, or transform your look.
+
+Whether you're looking for a fresh haircut, a styled look, or a new hair color, our services are tailored to your desired result. 💛
+
+Want to book? Use our Request Booking form below.`;
+}
 
   // ── Hours ──
   if (/hour|open|close|schedule|time|day|when|available|availability|weekend|weekday|monday|tuesday|wednesday|thursday|friday|saturday|sunday/.test(q)) {

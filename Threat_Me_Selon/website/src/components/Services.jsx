@@ -34,14 +34,34 @@ const Services = ({ isPreview = false }) => {
           </p>
         </div>
         
+        <div className="text-center mb-6">
+          <span className="inline-flex items-center px-4 py-1.5 border border-gold/50 text-xs font-sans font-semibold tracking-widest uppercase text-purple-dark bg-gold/10">
+            Both Locations
+          </span>
+        </div>
+
         {/* Services Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {siteConfig.services.map((serviceGroup, index) => {
             const isFlipped = flippedCards[index];
 
             return (
+              <React.Fragment key={serviceGroup.id || index}>
+                {index === 5 && (
+                  <div className="md:col-span-2 py-4 sm:py-6 text-center">
+                    <div className="flex items-center gap-4">
+                      <div className="flex-1 border-t border-gold/50" />
+                      <span className="font-serif text-lg sm:text-xl text-purple-dark whitespace-nowrap">
+                        Specially in Portland Only
+                      </span>
+                      <div className="flex-1 border-t border-gold/50" />
+                    </div>
+                    <p className="mt-2 text-xs sm:text-sm font-sans tracking-wide text-gold font-semibold">
+                      3280 NW 185th Ave, Portland, OR
+                    </p>
+                  </div>
+                )}
               <div 
-                key={serviceGroup.id || index}
                 className="relative h-[440px] w-full rounded-none border border-gold/40 shadow-lg group overflow-hidden bg-purple-dark select-none cursor-pointer transition-all duration-300 hover:border-gold hover:shadow-xl"
                 onClick={() => toggleCard(index)}
                 role="button"
@@ -162,6 +182,7 @@ const Services = ({ isPreview = false }) => {
                   </div>
                 </div>
               </div>
+              </React.Fragment>
             );
           })}
         </div>
@@ -186,4 +207,3 @@ const Services = ({ isPreview = false }) => {
 };
 
 export default Services;
-
