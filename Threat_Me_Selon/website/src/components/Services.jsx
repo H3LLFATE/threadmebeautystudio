@@ -47,7 +47,7 @@ const Services = ({ isPreview = false }) => {
 
             return (
               <React.Fragment key={serviceGroup.id || index}>
-                {index === 5 && (
+                {serviceGroup.id === 'hairstyling' && (
                   <div className="md:col-span-2 py-4 sm:py-6 text-center">
                     <div className="flex items-center gap-4">
                       <div className="flex-1 border-t border-gold/50" />

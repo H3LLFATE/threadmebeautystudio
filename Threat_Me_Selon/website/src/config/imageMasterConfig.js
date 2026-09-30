@@ -20,7 +20,7 @@ import pmuImg from '../assets/images/PMU.jpeg';
 import waxImg from '../assets/images/WAXING.jpeg';
 import skinImg from '../assets/images/FACIAL.jpeg';
 import makeupImg from '../assets/images/EVENTMAKEUP.jpeg';
-import thredingImg from '../assets/images/Threding.jpeg';
+import threadingImg from '../assets/images/Threding.jpeg';
 import hairstylingImg from '../assets/images/hairstyling.jpeg'; 
 import browsAndLashImg from '../assets/images/browsandlash.jpeg';
 
@@ -78,7 +78,7 @@ export const imageMasterConfig = {
     },
     threading: {
       location: "Service Card 4: Threading",
-      import : thredingImg,
+      path: threadingImg,
       alt: "Threading Services"
     },
     makeupArtistry: {
