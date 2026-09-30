@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { Phone, Mail, MapPin, Clock, CheckCircle2, Calendar, Sparkles } from 'lucide-react';
+import BooksyWidget from './BooksyWidget';
 
 const initialFormData = {
   fullName: '',
@@ -161,6 +162,13 @@ const BookingForm = () => {
           {/* RIGHT COLUMN: Booking Form Card */}
           <div className="lg:col-span-7">
             <div className="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-xl border border-cream-300 relative">
+              <BooksyWidget />
+
+              <div className="flex items-center gap-4 my-8">
+                <div className="flex-1 border-t border-gold/30" />
+                <span className="text-[10px] font-sans font-semibold tracking-widest text-gold uppercase">or request a booking</span>
+                <div className="flex-1 border-t border-gold/30" />
+              </div>
               
               {isSubmitted ? (
                 <div className="py-16 text-center space-y-4">

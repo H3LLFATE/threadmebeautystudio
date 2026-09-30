@@ -20,6 +20,10 @@ import pmuImg from '../assets/images/PMU.jpeg';
 import waxImg from '../assets/images/WAXING.jpeg';
 import skinImg from '../assets/images/FACIAL.jpeg';
 import makeupImg from '../assets/images/EVENTMAKEUP.jpeg';
+import thredingImg from '../assets/images/Threding.jpeg';
+import hairstylingImg from '../assets/images/hairstyling.jpeg'; 
+import browsAndLashImg from '../assets/images/browsandlash.jpeg';
+
 
 export const imageMasterConfig = {
   // ----------------------------------------------------------------------------
@@ -72,19 +76,24 @@ export const imageMasterConfig = {
       path: waxImg,
       alt: "Waxing & Tinting Services"
     },
+    threading: {
+      location: "Service Card 4: Threading",
+      path: threadingImg,
+      alt: "Threading Services"
+    },
     makeupArtistry: {
-      location: "Service Card 4: Beauty & Event Makeup",
+      location: "Service Card 5: Beauty & Event Makeup",
       path: makeupImg,
       alt: "Beauty & Event Makeup Services"
     },
     browsAndLash: {
-      location: "Service Card 5: Brows & Lash Lift Tint and Lamination",
-      path: founderImg,
+      location: "Service Card 6: Brows & Lash Lift Tint and Lamination",
+      path : browsAndLashImg,
       alt: "Brows & Lash Lift Tint and Lamination Services"
     },
     hairstyling: {
-      location: "Service Card 6: Hair Styling",
-      path: founderImg,
+      location: "Service Card 7: Hair Styling",
+      path: hairstylingImg,
       alt: "Hair Styling Services"
     }
   },

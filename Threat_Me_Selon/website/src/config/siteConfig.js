@@ -69,6 +69,36 @@ export const siteConfig = {
 },
 
 {
+  id: "threading",
+  category: "Threading",
+  subtitle: "Precise Facial Hair Removal & Brow Shaping",
+  image: imageMasterConfig.services.threading.path,
+  description: "Professional threading services designed to create clean, precise, and beautifully defined results with careful attention to detail.",
+  items: [
+    {
+      name: "Eyebrow Threading",
+      desc: "Professional shaping and clean-up to create balanced, well-defined eyebrows that complement your face."
+    },
+    {
+      name: "Upper Lip Threading",
+      desc: "Quick and precise removal of unwanted hair around the upper lip for a smooth, clean appearance."
+    },
+    {
+      name: "Chin Threading",
+      desc: "Gentle removal of unwanted chin hair with attention to detail and a smooth finish."
+    },
+    {
+      name: "Full Face Threading",
+      desc: "A complete facial threading service covering the eyebrows, upper lip, chin, cheeks, and other areas as required."
+    },
+    {
+      name: "Forehead Threading",
+      desc: "Removes unwanted hair around the forehead and hairline for a cleaner, more polished appearance."
+    }
+  ]
+},
+
+{
   id: "skincare-facials",
   category: "Skincare & Facials",
   subtitle: "Rejuvenation & Deep Skin Nourishment",
@@ -124,7 +154,7 @@ export const siteConfig = {
 {
   id: "hairstyling",
   category: "Haircut, Hairstyling & Hair Color",
-  subtitle: "Professional Hair Transformation",
+  subtitle: "Professional Hair Transformation\nOnly Available at Threadme @bolloywoodbrows",
   image: imageMasterConfig.services.hairstyling.path,
   description: "Professional hair services tailored to your style, from precision haircuts and styling to beautiful color transformations.",
   items: [
