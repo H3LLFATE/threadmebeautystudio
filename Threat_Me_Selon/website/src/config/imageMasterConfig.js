@@ -78,7 +78,7 @@ export const imageMasterConfig = {
     },
     threading: {
       location: "Service Card 4: Threading",
-      path: threadingImg,
+      import : thredingImg,
       alt: "Threading Services"
     },
     makeupArtistry: {
