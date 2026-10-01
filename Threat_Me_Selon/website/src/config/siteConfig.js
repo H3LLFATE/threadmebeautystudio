@@ -9,6 +9,20 @@ export const siteConfig = {
     email: "info@threadmebeautystudio.com",
     website: "https://threadmebeautystudio.com",
     address: "1850 S River Dr, Portland, OR 97201, United States",
+    locations: [
+      {
+        name: "ThreadMe Beauty Studio",
+        area: "Downtown Portland @Waterfront",
+        address: "1850 S River Dr, Portland, Oregon 97201",
+        phone: "(215) 594-7273"
+      },
+      {
+        name: "ThreadMe Beauty @Bollywood 185th",
+        area: "Tannersbourne 185th",
+        address: "3280 NW 185th Ave, Portland, Oregon 97229",
+        phone: "(971) 447-5050"
+      }
+    ],
     hours: [
       { day: "Monday – Friday", time: "10:00 am – 7:00 pm" },
       { day: "Saturday", time: "10:00 am – 6:00 pm" },
@@ -154,7 +168,7 @@ export const siteConfig = {
 {
   id: "hairstyling",
   category: "Haircut, Hairstyling & Hair Color",
-  subtitle: "Professional Hair Transformation\n \nOnly Available at Threadme @bolloywoodbrows",
+  subtitle: "Professional Hair Transformation\nOnly Available at Threadme @bolloywoodbrows",
   image: imageMasterConfig.services.hairstyling.path,
   description: "Professional hair services tailored to your style, from precision haircuts and styling to beautiful color transformations.",
   items: [

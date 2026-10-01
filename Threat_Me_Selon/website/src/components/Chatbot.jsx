@@ -2,6 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { MessageCircle, X, Send, Sparkles, ExternalLink, Bot, User, MessageSquareText, ChevronDown } from 'lucide-react';
 
+const locationsText = siteConfig.business.locations
+  .map((location) => `• **${location.name}** (${location.area})\n${location.address}\nPhone: ${location.phone}`)
+  .join('\n\n');
+
 // ─── Knowledge Base ───────────────────────────────────────────────────────────
 const generateBotReply = (userQuery) => {
   const q = userQuery.toLowerCase().trim();
@@ -90,12 +94,12 @@ Want to book? Use our Request Booking form below.`;
 
   // ── Location / Address ──
   if (/location|address|where|direction|map|find you|portland|studio|salon|shop|place/.test(q)) {
-    return `📍 **Our Studio Location:**\n\n${siteConfig.business.address}\n\nWe're conveniently located in Portland, Oregon — a welcoming, intimate studio space designed for your comfort and privacy.\n\nNeed directions? Drop us a message on WhatsApp and we'll guide you right to us! 🗺️`;
+    return `📍 **Our Two Portland Locations:**\n\n${locationsText}\n\nNeed directions? Drop us a message on WhatsApp and we'll guide you right to us! 🗺️`;
   }
 
   // ── Contact ──
   if (/phone|call|contact|email|reach|whatsapp|message|text|dm|direct/.test(q)) {
-    return `📞 **Get In Touch:**\n\n• 📱 Phone / WhatsApp: ${siteConfig.business.phone}\n• 📧 Email: ${siteConfig.business.email}\n• 📍 Address: ${siteConfig.business.address}\n\nThe quickest way to reach us is via **WhatsApp** — tap the green button below to start a chat right now!`;
+    return `📞 **Get In Touch:**\n\n${locationsText}\n\n• 📧 Email: ${siteConfig.business.email}\n\nThe quickest way to reach us is via **WhatsApp** — tap the green button below to start a chat right now!`;
   }
 
   // ── About Founder / Business ──
@@ -105,12 +109,12 @@ Want to book? Use our Request Booking form below.`;
 
   // ── Booking & Pricing ──
   if (/book|appointment|reserv|price|cost|how much|rate|fee|pay|deposit|cancell|reschedul|slot|session/.test(q)) {
-    return `📅 **Booking an Appointment:**\n\nYou can book in 3 easy ways:\n\n1. **Website Form** — Fill out the Request Booking form at the bottom of this page\n2. **WhatsApp** — Tap the green button below for instant messaging\n3. **Phone** — Call us at ${siteConfig.business.phone}\n\n💡 **Tips:**\n• We recommend booking at least 2–3 days in advance\n• PMU & Bridal packages may require a consultation first\n• Deposits may be required for certain treatments\n\nWe'll confirm your appointment within 24 hours!`;
+    return `📅 **Booking an Appointment:**\n\nYou can book in 3 easy ways:\n\n1. **Booksy** — Use the online booking button in the booking section below\n2. **WhatsApp** — Tap the green button below for instant messaging\n3. **Phone** — Contact your preferred location directly:\n\n${locationsText}\n\n💡 **Tips:**\n• We recommend booking at least 2–3 days in advance\n• PMU & Bridal packages may require a consultation first\n• Deposits may be required for certain treatments\n\nWe'll confirm your appointment within 24 hours!`;
   }
 
   // ── Parking ──
   if (/park|parking|drive|car|uber|lyft|transit|bus/.test(q)) {
-    return `🚗 **Getting Here:**\n\nWe're located at ${siteConfig.business.address}.\n\nParking is available nearby. For specific directions or if you have trouble finding us, just send us a WhatsApp message — we'll guide you right to the studio! 🗺️`;
+    return `🚗 **Getting Here:**\n\n${locationsText}\n\nParking is available nearby. For specific directions or if you have trouble finding us, just send us a WhatsApp message — we'll guide you right to the studio! 🗺️`;
   }
 
   // ── Aftercare ──

@@ -57,7 +57,7 @@ const Services = ({ isPreview = false }) => {
                       <div className="flex-1 border-t border-gold/50" />
                     </div>
                     <p className="mt-2 text-xs sm:text-sm font-sans tracking-wide text-gold font-semibold">
-                      3280 NW 185th Ave, Portland, OR
+                      3280 NW 185th Ave, Portland, Oregon 97229
                     </p>
                   </div>
                 )}
@@ -102,7 +102,7 @@ const Services = ({ isPreview = false }) => {
                       {serviceGroup.category}
                     </h4>
 
-                    <p className="text-gold text-xs sm:text-sm font-sans uppercase tracking-widest font-medium mb-6 whitespace-pre-line">
+                    <p className="text-gold text-xs sm:text-sm font-sans uppercase tracking-widest font-medium mb-6">
                       {serviceGroup.subtitle}
                     </p>
 

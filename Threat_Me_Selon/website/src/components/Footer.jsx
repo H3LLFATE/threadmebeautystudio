@@ -48,16 +48,20 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <h4 className="font-serif text-base mb-6 text-cream tracking-wide">Contact</h4>
             <ul className="space-y-4 text-cream/55 text-sm font-light">
-              <li className="flex items-start gap-3">
-                <MapPin size={15} className="mt-0.5 text-gold flex-shrink-0" />
-                <span className="leading-snug">{siteConfig.business.address}</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone size={15} className="text-gold flex-shrink-0" />
-                <a href={`tel:${siteConfig.business.phone.replace(/[^0-9]/g, '')}`} className="hover:text-gold transition-colors">
-                  {siteConfig.business.phone}
-                </a>
-              </li>
+              {siteConfig.business.locations.map((location) => (
+                <li key={location.name} className="flex items-start gap-3">
+                  <MapPin size={15} className="mt-0.5 text-gold flex-shrink-0" />
+                  <span className="leading-snug">
+                    <span className="block text-cream font-medium">{location.name}</span>
+                    <span className="block text-cream/45 text-xs mb-1">{location.area}</span>
+                    <span className="block">{location.address}</span>
+                    <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-1.5 mt-1 hover:text-gold transition-colors">
+                      <Phone size={13} className="text-gold" />
+                      {location.phone}
+                    </a>
+                  </span>
+                </li>
+              ))}
               <li className="flex items-center gap-3">
                 <Mail size={15} className="text-gold flex-shrink-0" />
                 <a href={`mailto:${siteConfig.business.email}`} className="hover:text-gold transition-colors break-all">

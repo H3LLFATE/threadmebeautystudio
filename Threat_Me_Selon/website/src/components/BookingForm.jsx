@@ -72,24 +72,6 @@ const BookingForm = () => {
             </div>
 
             <div className="space-y-6 pt-4">
-              {/* Phone */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full border border-purple/20 bg-cream-50 flex items-center justify-center flex-shrink-0 text-purple shadow-sm">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <span className="block text-xs font-sans font-bold tracking-widest text-gold uppercase mb-1">
-                    PHONE
-                  </span>
-                  <a 
-                    href={`tel:${siteConfig.business.phone.replace(/[^0-9]/g, '')}`} 
-                    className="text-gray-900 font-medium text-lg hover:text-purple transition-colors"
-                  >
-                    {siteConfig.business.phone}
-                  </a>
-                </div>
-              </div>
-
               {/* Email */}
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-full border border-purple/20 bg-cream-50 flex items-center justify-center flex-shrink-0 text-purple shadow-sm">
@@ -108,19 +90,26 @@ const BookingForm = () => {
                 </div>
               </div>
 
-              {/* Location */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full border border-purple/20 bg-cream-50 flex items-center justify-center flex-shrink-0 text-purple shadow-sm">
-                  <MapPin size={20} />
-                </div>
-                <div>
-                  <span className="block text-xs font-sans font-bold tracking-widest text-gold uppercase mb-1">
-                    LOCATION
-                  </span>
-                  <p className="text-gray-800 font-light leading-relaxed text-base">
-                    {siteConfig.business.address}
-                  </p>
-                </div>
+              {/* Locations */}
+              <div className="space-y-5">
+                {siteConfig.business.locations.map((location) => (
+                  <div key={location.name} className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full border border-purple/20 bg-cream-50 flex items-center justify-center flex-shrink-0 text-purple shadow-sm">
+                      <MapPin size={20} />
+                    </div>
+                    <div>
+                      <span className="block text-xs font-sans font-bold tracking-widest text-gold uppercase mb-1">
+                        {location.name}
+                      </span>
+                      <p className="text-gray-500 text-xs font-medium mb-1">{location.area}</p>
+                      <p className="text-gray-800 font-light leading-relaxed text-base">{location.address}</p>
+                      <a href={`tel:${location.phone.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-1.5 mt-1.5 text-gray-900 font-medium hover:text-purple transition-colors">
+                        <Phone size={14} className="text-purple" />
+                        {location.phone}
+                      </a>
+                    </div>
+                  </div>
+                ))}
               </div>
 
               {/* Hours */}
