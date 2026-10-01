@@ -166,7 +166,7 @@ const Chatbot = () => {
     }
   }, [isOpen]);
 
-  const formattedPhone = siteConfig.business.phone.replace(/[^0-9]/g, '');
+  const formattedPhone = siteConfig.business.whatsapp.replace(/[^0-9]/g, '');
   const whatsappUrl = `https://wa.me/${formattedPhone.length === 10 ? '1' + formattedPhone : formattedPhone}?text=${encodeURIComponent("Hi ThreadMe Beauty! I'd like to get in touch with a real person 💛")}`;
 
   const handleSendMessage = (textToSend) => {

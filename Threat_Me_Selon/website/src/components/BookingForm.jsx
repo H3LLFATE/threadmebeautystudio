@@ -30,7 +30,7 @@ const BookingForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formattedPhone = siteConfig.business.phone.replace(/[^0-9]/g, '');
+    const formattedPhone = siteConfig.business.whatsapp.replace(/[^0-9]/g, '');
     const whatsappNumber = formattedPhone.length === 10 ? `1${formattedPhone}` : formattedPhone;
     const bookingMessage = [
       `Hello ${siteConfig.business.name}! I would like to request an appointment.`,
