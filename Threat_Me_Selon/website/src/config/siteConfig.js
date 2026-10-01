@@ -154,7 +154,7 @@ export const siteConfig = {
 {
   id: "hairstyling",
   category: "Haircut, Hairstyling & Hair Color",
-  subtitle: "Professional Hair Transformation\nOnly Available at Threadme @bolloywoodbrows",
+  subtitle: "Professional Hair Transformation\n \nOnly Available at Threadme @bolloywoodbrows",
   image: imageMasterConfig.services.hairstyling.path,
   description: "Professional hair services tailored to your style, from precision haircuts and styling to beautiful color transformations.",
   items: [
