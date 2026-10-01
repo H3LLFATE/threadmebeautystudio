@@ -102,7 +102,7 @@ const Services = ({ isPreview = false }) => {
                       {serviceGroup.category}
                     </h4>
 
-                    <p className="text-gold text-xs sm:text-sm font-sans uppercase tracking-widest font-medium mb-6">
+                    <p className="text-gold text-xs sm:text-sm font-sans uppercase tracking-widest font-medium mb-6 whitespace-pre-line">
                       {serviceGroup.subtitle}
                     </p>
 
