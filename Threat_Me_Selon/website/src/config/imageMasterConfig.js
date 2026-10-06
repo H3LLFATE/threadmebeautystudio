@@ -78,22 +78,22 @@ export const imageMasterConfig = {
       alt: "Waxing & Tinting Services"
     },
     threading: {
-      location: "Service Card 5: Threading",
+      location: "Service Card 4: Threading",
       path: threadingImg,
       alt: "Threading Services"
     },
     makeupArtistry: {
-      location: "Service Card 6: Beauty & Event Makeup",
+      location: "Service Card 5: Beauty & Event Makeup",
       path: makeupImg,
       alt: "Beauty & Event Makeup Services"
     },
     browsAndLash: {
-      location: "Service Card 7: Brows & Lash Lift Tint and Lamination",
+      location: "Service Card 6: Brows & Lash Lift Tint and Lamination",
       path : browsAndLashImg,
       alt: "Brows & Lash Lift Tint and Lamination Services"
     },
     spa: {
-      location: "Service Card 4: Spa Services",
+      location: "Service Card 7: Spa Services",
       path: spaImg,
       alt: "Spa Services"
     },

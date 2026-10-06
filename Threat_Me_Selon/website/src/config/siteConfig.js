@@ -88,38 +88,6 @@ export const siteConfig = {
     }
   ]
 },
-
-{
-  id: "spaTreatment",
-  category: "Spa Treatment",
-  subtitle: "Relaxation, Care & Full-Body Treatments",
-  image: imageMasterConfig.services.spa.path,
-  description:
-    "Relaxing spa treatments designed to nourish, refresh, and rejuvenate your scalp, skin, and body.",
-  items: [
-    {
-      name: "Hot Oil Head & Shoulder Massage",
-      desc: "A relaxing hot oil massage focused on the head and shoulders to help ease tension and promote relaxation."
-    },
-    {
-      name: "Scalp Treatment & Deep Conditioning",
-      desc: "A nourishing scalp and deep conditioning treatment designed to refresh the scalp and leave the hair feeling soft and revitalized."
-    },
-    {
-      name: "Full Body Spa Treatment",
-      desc: "A relaxing full-body spa treatment designed to refresh, nourish, and rejuvenate the skin."
-    },
-    {
-      name: "Half Back Treatment",
-      desc: "A targeted back treatment designed to cleanse, refresh, and care for the skin across the upper or lower back."
-    },
-    {
-      name: "Full Body Whitening Treatment",
-      desc: "A full-body treatment designed to improve the appearance and radiance of the skin for a brighter, more even-looking complexion."
-    }
-  ]
-},
-
 {
   id: "threading",
   category: "Threading",
@@ -200,6 +168,37 @@ export const siteConfig = {
     { name: "Brow Tint", desc: "Enhance brow definition and depth with a professionally applied tint." },
     { name: "Henna Brow Tint", desc: "Create beautifully defined brows with a rich henna tint for added color and shape." },
     { name: "Lash Tint", desc: "Darken and define natural lashes for a more noticeable, polished appearance." }
+  ]
+},
+
+{
+  id: "spaTreatment",
+  category: "Spa Treatment",
+  subtitle: "Relaxation, Care & Full-Body Treatments",
+  image: imageMasterConfig.services.spa.path,
+  description:
+    "Relaxing spa treatments designed to nourish, refresh, and rejuvenate your scalp, skin, and body.",
+  items: [
+    {
+      name: "Hot Oil Head & Shoulder Massage",
+      desc: "A relaxing hot oil massage focused on the head and shoulders to help ease tension and promote relaxation."
+    },
+    {
+      name: "Scalp Treatment & Deep Conditioning",
+      desc: "A nourishing scalp and deep conditioning treatment designed to refresh the scalp and leave the hair feeling soft and revitalized."
+    },
+    {
+      name: "Full Body Spa Treatment",
+      desc: "A relaxing full-body spa treatment designed to refresh, nourish, and rejuvenate the skin."
+    },
+    {
+      name: "Half Back Treatment",
+      desc: "A targeted back treatment designed to cleanse, refresh, and care for the skin across the upper or lower back."
+    },
+    {
+      name: "Full Body Whitening Treatment",
+      desc: "A full-body treatment designed to improve the appearance and radiance of the skin for a brighter, more even-looking complexion."
+    }
   ]
 },
 
