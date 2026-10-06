@@ -91,7 +91,7 @@ export const siteConfig = {
   id: "spaTreatment",
   category: "Spa Treatment",
   subtitle: "Relaxation, Care & Full-Body Treatments",
-  image: imageMasterConfig.services.spaTreatment.path,
+  image: imageMasterConfig.services.spa.path,
   description:
     "Relaxing spa treatments designed to nourish, refresh, and rejuvenate your scalp, skin, and body.",
   items: [
