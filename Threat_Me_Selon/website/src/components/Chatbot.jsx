@@ -54,6 +54,25 @@ Want to book? Use our Request Booking form below.`;
     return `✦ **Waxing Services:**\n\n• **Professional Facial Waxing** — Gentle waxing for areas including the upper lip, chin, cheeks, and full face.\n• **Full Body Waxing Services** — Professional waxing treatments for smooth, silky skin.\n\nOur waxing services are designed to leave your skin smooth, clean, and beautifully groomed. 💕\n\nWant to book? Use our Request Booking form below.`;
   }
 
+  // ── Spa Treatment ──
+if (/spa|hot oil|head massage|shoulder massage|scalp treatment|deep conditioning|full body spa|half back|back treatment|body whitening|whitening treatment/.test(q)) {
+  return `🌿 **Spa Treatment:**
+
+• **Hot Oil Head & Shoulder Massage** — A relaxing hot oil massage focused on the head and shoulders to help ease tension and promote relaxation.
+
+• **Scalp Treatment & Deep Conditioning** — A nourishing treatment designed to refresh the scalp and leave the hair feeling soft and revitalized.
+
+• **Full Body Spa Treatment** — A relaxing full-body treatment designed to refresh, nourish, and rejuvenate the skin.
+
+• **Half Back Treatment** — A targeted treatment designed to cleanse, refresh, and care for the skin across the back.
+
+• **Full Body Whitening Treatment** — A full-body treatment designed to improve the appearance and radiance of the skin for a brighter, more even-looking complexion.
+
+Our spa treatments are designed to help you relax while giving your skin, scalp, and body professional care. 💛
+
+Want to book? Use our Request Booking form below.`;
+}
+
   // ── Threading ──
 if (/thread|threading|eyebrow thread|brow thread|upper lip thread|lip thread|chin thread|face thread|full face thread|forehead thread/.test(q)) {
   return `✨ **Threading Services:**\n\n• **Eyebrow Threading** — Professional shaping and clean-up to create balanced, well-defined eyebrows that complement your face.\n\n• **Upper Lip Threading** — Quick and precise removal of unwanted hair around the upper lip for a smooth, clean appearance.\n\n• **Chin Threading** — Gentle removal of unwanted chin hair with attention to detail and a smooth finish.\n\n• **Full Face Threading** — A complete facial threading service covering the eyebrows, upper lip, chin, cheeks, and other areas as required.\n\n• **Forehead Threading** — Removes unwanted hair around the forehead and hairline for a cleaner, more polished appearance.\n\nOur threading services provide precise hair removal and detailed shaping for a clean, polished appearance. 💛\n\nWant to book? Use our Request Booking form below.`;
