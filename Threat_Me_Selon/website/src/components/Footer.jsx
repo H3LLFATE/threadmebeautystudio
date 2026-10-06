@@ -123,12 +123,17 @@ const Footer = () => {
               )}
             </div>
 
-            {/* Hours snippet */}
-            <div className="text-cream/45 text-xs space-y-1.5 border-t border-cream/10 pt-5">
-              <p className="text-gold text-[10px] uppercase tracking-widest mb-2">Studio Hours</p>
-              <p>Mon – Fri: 10am – 7pm</p>
-              <p>Saturday: 10am – 6pm</p>
-              <p>Sunday: 11am – 5pm</p>
+            {/* Location-specific hours */}
+            <div className="text-cream/45 text-xs space-y-4 border-t border-cream/10 pt-5">
+              <p className="text-gold text-[10px] uppercase tracking-widest">Studio Hours</p>
+              {siteConfig.business.locations.map((location) => (
+                <div key={location.name} className="space-y-1">
+                  <p className="text-cream font-medium">{location.name}</p>
+                  {location.hours.map((hours) => (
+                    <p key={hours.day}>{hours.day}: {hours.time}</p>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
 

@@ -86,9 +86,9 @@ Want to book? Use our Request Booking form below.`;
 
   // ── Hours ──
   if (/hour|open|close|schedule|time|day|when|available|availability|weekend|weekday|monday|tuesday|wednesday|thursday|friday|saturday|sunday/.test(q)) {
-    const hoursText = siteConfig.business.hours
-      ? siteConfig.business.hours.map(h => `• ${h.day}: ${h.time}`).join('\n')
-      : '• Monday – Friday: 10:00 am – 7:00 pm\n• Saturday: 10:00 am – 6:00 pm\n• Sunday: 11:00 am – 5:00 pm';
+    const hoursText = siteConfig.business.locations
+      .map((location) => `**${location.name}**\n${location.hours.map((hours) => `• ${hours.day}: ${hours.time}`).join('\n')}`)
+      .join('\n\n');
     return `⏰ **Business Hours:**\n\n${hoursText}\n\n📅 Appointments are recommended — walk-ins welcome based on availability!`;
   }
 

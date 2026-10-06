@@ -15,19 +15,23 @@ export const siteConfig = {
         name: "ThreadMe Beauty Studio",
         area: "Downtown Portland @Waterfront",
         address: "1850 S River Dr, Portland, Oregon 97201",
-        phone: "(215) 594-7273"
+        phone: "(215) 594-7273",
+        hours: [
+          { day: "Monday – Friday", time: "11:00 am – 7:00 pm" },
+          { day: "Saturday – Sunday", time: "11:00 am – 5:00 pm" }
+        ]
       },
       {
         name: "ThreadMe Beauty @Bollywood 185th",
         area: "Tannersbourne 185th",
         address: "3280 NW 185th Ave, Portland, Oregon 97229",
-        phone: "(971) 447-5050"
+        phone: "(971) 447-5050",
+        hours: [
+          { day: "Monday – Friday", time: "10:00 am – 7:00 pm" },
+          { day: "Saturday", time: "10:00 am – 6:00 pm" },
+          { day: "Sunday", time: "11:00 am – 5:00 pm" }
+        ]
       }
-    ],
-    hours: [
-      { day: "Monday – Friday", time: "10:00 am – 7:00 pm" },
-      { day: "Saturday", time: "10:00 am – 6:00 pm" },
-      { day: "Sunday", time: "11:00 am – 5:00 pm" }
     ]
   },
   social: {

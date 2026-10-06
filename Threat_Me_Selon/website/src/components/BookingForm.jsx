@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
-import { Phone, Mail, MapPin, Clock, CheckCircle2, Calendar, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, CheckCircle2, Calendar, Sparkles } from 'lucide-react';
 import BooksyWidget from './BooksyWidget';
 
 const initialFormData = {
@@ -107,42 +107,18 @@ const BookingForm = () => {
                         <Phone size={14} className="text-purple" />
                         {location.phone}
                       </a>
+                      <div className="mt-3 space-y-1 text-xs font-light text-gray-700">
+                        <span className="block text-[10px] font-sans font-bold tracking-widest text-gold uppercase">Hours</span>
+                        {location.hours.map((hours) => (
+                          <div key={hours.day} className="flex justify-between gap-4 border-b border-cream-300 pb-1">
+                            <span className="font-medium text-gray-800">{hours.day}</span>
+                            <span className="text-gray-600 whitespace-nowrap">{hours.time}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Hours */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full border border-purple/20 bg-cream-50 flex items-center justify-center flex-shrink-0 text-purple shadow-sm">
-                  <Clock size={20} />
-                </div>
-                <div className="w-full">
-                  <span className="block text-xs font-sans font-bold tracking-widest text-gold uppercase mb-2">
-                    HOURS
-                  </span>
-                  <div className="space-y-1.5 text-sm font-light text-gray-700 max-w-xs">
-                    {siteConfig.business.hours ? (
-                      siteConfig.business.hours.map((h, i) => (
-                        <div key={i} className="flex justify-between border-b border-cream-300 pb-1">
-                          <span className="font-medium text-gray-800">{h.day}</span>
-                          <span className="text-gray-600">{h.time}</span>
-                        </div>
-                      ))
-                    ) : (
-                      <>
-                        <div className="flex justify-between border-b border-cream-300 pb-1">
-                          <span>Monday – Saturday</span>
-                          <span>10:00 am – 7:00 pm</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Sunday</span>
-                          <span>11:00 am – 5:00 pm</span>
-                        </div>
-                      </>
-                    )}
-                  </div>
-                </div>
               </div>
 
             </div>
