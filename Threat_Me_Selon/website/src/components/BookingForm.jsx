@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { siteConfig } from '../config/siteConfig';
-import { Phone, Mail, MapPin, CheckCircle2, Calendar, Sparkles } from 'lucide-react';
-import BooksyWidget from './BooksyWidget';
+import { Phone, Mail, MapPin, CheckCircle2, Calendar, Sparkles, CalendarHeart, ExternalLink } from 'lucide-react';
 
 const initialFormData = {
   fullName: '',
@@ -53,6 +52,22 @@ const BookingForm = () => {
   const allTreatments = siteConfig.services.flatMap((group) =>
     group.items.map((item) => `${group.category} — ${item.name}`)
   );
+
+  // Booking locations data
+  const bookingLocations = [
+    {
+      name: siteConfig.business.locations[0].name,
+      area: siteConfig.business.locations[0].area,
+      url: siteConfig.links.bookingDowntown,
+      platform: 'Booksy',
+    },
+    {
+      name: siteConfig.business.locations[1].name,
+      area: siteConfig.business.locations[1].area,
+      url: siteConfig.links.bookingTannersbourne,
+      platform: 'Vagaro',
+    },
+  ];
 
   return (
     <section id="contact" className="section-padding scroll-mt-24 relative bg-cream border-t border-gold/20">
@@ -127,7 +142,46 @@ const BookingForm = () => {
           {/* RIGHT COLUMN: Booking Form Card */}
           <div className="lg:col-span-7">
             <div className="bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-xl border border-cream-300 relative">
-              <BooksyWidget />
+
+              {/* ── Dual-Location Booking Bubble Box ── */}
+              <div className="bg-gradient-to-br from-purple-dark/[0.03] to-gold/[0.06] border border-gold/30 rounded-2xl p-5 sm:p-6 mb-2">
+                <div className="text-center mb-5">
+                  <div className="inline-flex items-center gap-2 bg-purple-dark/10 px-4 py-1.5 rounded-full mb-3">
+                    <CalendarHeart size={15} className="text-purple" />
+                    <span className="text-xs font-bold tracking-widest text-purple-dark uppercase">Online Booking</span>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-serif text-purple-dark font-semibold">
+                    Click below to book at your preferred location
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-1 font-light">Please select the correct location to avoid any booking mix-ups</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {bookingLocations.map((loc) => (
+                    <div
+                      key={loc.name}
+                      className="bg-white rounded-xl border border-cream-300 p-4 sm:p-5 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 group"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-purple-dark/10 border border-purple/20 flex items-center justify-center mb-3 group-hover:bg-purple-dark/15 transition-colors">
+                        <MapPin size={18} className="text-purple" />
+                      </div>
+                      <p className="text-sm font-serif font-semibold text-purple-dark leading-snug">{loc.name}</p>
+                      <p className="text-[11px] text-gray-400 font-medium mt-0.5 mb-4">{loc.area}</p>
+                      <a
+                        href={loc.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full inline-flex items-center justify-center gap-2 bg-purple hover:bg-purple-light text-cream text-xs font-semibold tracking-wider uppercase px-4 py-3 rounded-xl border border-gold/30 hover:border-gold shadow-sm transition-all duration-300 hover:scale-[1.02] mt-auto"
+                      >
+                        <Calendar size={14} />
+                        <span>Book Now</span>
+                        <ExternalLink size={11} className="opacity-60" />
+                      </a>
+                      <span className="text-[10px] text-gray-400 mt-2 font-light">via {loc.platform}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               <div className="flex items-center gap-4 my-8">
                 <div className="flex-1 border-t border-gold/30" />

@@ -46,6 +46,8 @@ export const siteConfig = {
   },
   links: {
     booking: "#contact", // Smooth scroll to contact & booking section
+    bookingDowntown: "https://booksy.com/en-us/748759_threadme-beauty-studio_hair-salon_39938_portland",
+    bookingTannersbourne: "https://www.vagaro.com/bollywoodbeautyandstyle",
     googleReviews: "https://www.google.com/search?client=ms-android-nothing-terr1-reo3&hs=xL1V&sa=X&bih=783&hl=en-GB&cs=1&biw=411&sca_esv=76c3b7943658a61d&sxsrf=APpeQntLWllXiEZD5hiT8yzUetn9DjOPKg:1790193890245&kgmid=/g/11b6jgwwy7&q=Bollywood+Eyebrow+Threading+Salon+%26+Spa&shem=epsd1,ltae,rimspwouoe&shndl=30&source=sh/x/loc/act/m1/4&kgs=168c441a112658bb&utm_source=epsd1,ltae,rimspwouoe,sh/x/loc/act/m1/4#"
   },
   content: {
